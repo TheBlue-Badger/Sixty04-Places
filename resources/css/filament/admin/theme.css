@@ -1,0 +1,338 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* ---------------------------------------------------------------------
+ * SIXTY04 PLACES — brand styling for the auth screens (login, etc.)
+ * Mirrors the public site's forest-green / cream palette & typography.
+ * ------------------------------------------------------------------- */
+
+.fi-panel-admin .fi-simple-layout {
+    position: relative;
+    min-height: 100dvh;
+    background:
+        linear-gradient(135deg, rgba(26, 60, 40, 0.92) 0%, rgba(45, 106, 79, 0.85) 100%),
+        url('/images/hero/index-hero.jpg') center / cover no-repeat;
+}
+
+.fi-panel-admin .fi-simple-main-ctn {
+    padding: 2rem 1.5rem;
+}
+
+/* The default Filament card (.fi-simple-main) is what paints the black
+ * frame in dark mode. Strip it down to an invisible wrapper and let our
+ * own cream card (.fi-simple-page-content) be the only visible surface. */
+.fi-panel-admin .fi-simple-main {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-block: 0 !important;
+    max-width: 34rem !important;
+}
+
+.fi-panel-admin .fi-simple-page-content {
+    background: #faf7f2;
+    border-radius: 1.25rem;
+    padding: 3.25rem 3rem;
+    box-shadow: 0 25px 60px -15px rgba(26, 60, 40, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fi-panel-admin .fi-simple-header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.fi-panel-admin .s04-brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: auto !important;
+    margin: 0 auto 1.25rem;
+}
+
+.fi-panel-admin .s04-brand-logo-mark {
+    height: 44px;
+    width: 44px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.fi-panel-admin .s04-brand-logo-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.fi-panel-admin .s04-brand-logo-title {
+    font-family: var(--serif-font-family), Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #1a3c28;
+    line-height: 1;
+}
+
+.fi-panel-admin .s04-brand-logo-sub {
+    font-family: var(--mono-font-family), ui-monospace, monospace;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #357a5b;
+    margin-top: 2px;
+}
+
+.fi-panel-admin .fi-simple-header-heading {
+    font-family: var(--serif-font-family), Georgia, serif;
+    color: #1a3c28;
+}
+
+.fi-panel-admin .fi-simple-header-subheading {
+    font-family: var(--mono-font-family), ui-monospace, monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* The rest of the panel stays in the system dark theme, but the login
+ * card is a light "cream" surface — force readable, light-mode text
+ * colors inside it regardless of the active theme mode. */
+.fi-panel-admin .fi-simple-page-content,
+.fi-panel-admin .fi-simple-page-content * {
+    color-scheme: light;
+}
+
+.fi-panel-admin .fi-simple-page-content .fi-fo-field-label,
+.fi-panel-admin .fi-simple-page-content label {
+    color: #4a3728 !important;
+}
+
+.fi-panel-admin .fi-simple-page-content .fi-input-wrp {
+    background-color: #ffffff !important;
+    border-color: #d4a574 !important;
+}
+
+.fi-panel-admin .fi-simple-page-content .fi-input {
+    color: #1a1a1a !important;
+}
+
+.fi-panel-admin .fi-simple-page-content .fi-input::placeholder {
+    color: #a3a3a3 !important;
+}
+
+.fi-panel-admin .fi-input-wrp {
+    border-radius: 0.75rem;
+}
+
+.fi-panel-admin .fi-simple-page-content .fi-input {
+    padding-block: 0.7rem;
+    font-size: 0.95rem;
+}
+
+.fi-panel-admin .fi-simple-page-content .fi-btn {
+    padding-block: 0.7rem;
+    font-size: 0.85rem;
+}
+
+.fi-panel-admin .fi-btn {
+    border-radius: 9999px;
+    font-family: var(--mono-font-family), ui-monospace, monospace;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fi-panel-admin .fi-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px -4px rgba(45, 106, 79, 0.45);
+}
+
+.fi-panel-admin .fi-checkbox-input:checked {
+    background-color: #2d6a4f;
+    border-color: #2d6a4f;
+}
+
+/* ---------------------------------------------------------------------
+ * Main application shell — sidebar, topbar, headings, tables & widgets.
+ * ------------------------------------------------------------------- */
+
+.fi-panel-admin .fi-body {
+    background-color: #faf7f2;
+}
+
+/* Sidebar — dark forest-green, mirroring the public site's navbar. */
+.fi-panel-admin .fi-sidebar {
+    background-color: #1a3c28;
+    border-inline-end: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fi-panel-admin .fi-sidebar-header {
+    background-color: #1a3c28;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+}
+
+.fi-panel-admin .fi-sidebar-group-label {
+    font-family: var(--mono-font-family), ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.68rem;
+    color: #74c69d;
+}
+
+.fi-panel-admin .fi-sidebar-item-btn {
+    border-radius: 0.75rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.fi-panel-admin .fi-sidebar-item-label {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.fi-panel-admin .fi-sidebar-item-icon {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.fi-panel-admin .fi-sidebar-item-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.fi-panel-admin .fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+    background-color: #2d6a4f;
+}
+
+.fi-panel-admin .fi-sidebar-item.fi-active > .fi-sidebar-item-btn .fi-sidebar-item-label {
+    color: #ffffff;
+}
+
+.fi-panel-admin .fi-sidebar-item.fi-active > .fi-sidebar-item-btn .fi-sidebar-item-icon {
+    color: #d8f3dc;
+}
+
+.fi-panel-admin .fi-sidebar-close-sidebar-btn,
+.fi-panel-admin .fi-sidebar-open-collapse-sidebar-btn {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Topbar */
+.fi-panel-admin .fi-topbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Page headings — Playfair Display, matching the site's editorial feel. */
+.fi-panel-admin .fi-header-heading {
+    font-family: var(--serif-font-family), Georgia, serif;
+    color: #1a3c28;
+}
+
+/* Stat widgets */
+.fi-panel-admin .fi-wi-stats-overview-stat {
+    border-radius: 1rem;
+    border: 1px solid #e8d5b5;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fi-panel-admin .fi-wi-stats-overview-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px -10px rgba(26, 60, 40, 0.25);
+}
+
+.fi-panel-admin .fi-wi-stats-overview-stat-value {
+    font-family: var(--mono-font-family), ui-monospace, monospace;
+    letter-spacing: -0.5px;
+}
+
+/* Tables */
+.fi-panel-admin .fi-ta-ctn {
+    border-radius: 1rem;
+    border: 1px solid #f0e6d8;
+}
+
+.fi-panel-admin .fi-ta-header-cell {
+    font-family: var(--mono-font-family), ui-monospace, monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #faf7f2;
+}
+
+.fi-panel-admin .fi-ta-row:hover {
+    background-color: #f0faf4;
+}
+
+/* Badges — small pill labels, matching the site's uppercase mono tags. */
+.fi-panel-admin .fi-badge {
+    border-radius: 9999px;
+    font-family: var(--mono-font-family), ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-size: 0.66rem;
+}
+
+/* Sections & cards */
+.fi-panel-admin .fi-section {
+    border-radius: 1rem;
+}
+
+/* ---------------------------------------------------------------------
+ * Dark mode — the sidebar/header keep their fixed brand green (it works
+ * against both themes), but everything else that used explicit light
+ * colors above needs a dark-surface equivalent here.
+ * ------------------------------------------------------------------- */
+
+.dark .fi-panel-admin .fi-body {
+    background-color: #0f1c15;
+}
+
+.dark .fi-panel-admin .fi-sidebar {
+    border-inline-end-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .fi-panel-admin .fi-topbar {
+    background-color: #16241c;
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .fi-panel-admin .fi-header-heading {
+    color: #95d5b2;
+}
+
+.dark .fi-panel-admin .fi-wi-stats-overview-stat {
+    background-color: #1c3025;
+    border-color: rgba(149, 213, 178, 0.18);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.dark .fi-panel-admin .fi-wi-stats-overview-stat:hover {
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.dark .fi-panel-admin .fi-ta-ctn {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .fi-panel-admin .fi-ta-header-cell {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.dark .fi-panel-admin .fi-ta-row:hover {
+    background-color: rgba(45, 106, 79, 0.16);
+}
+
+.dark .fi-panel-admin .fi-section {
+    background-color: #16241c;
+}
+
+/* The login card is a fixed cream brand surface in both themes — make
+ * sure the hero backdrop behind it reads correctly against a dark
+ * browser theme too (it already ignores the panel's own light/dark
+ * toggle, so no further change is needed there). */
+.dark .fi-panel-admin .fi-simple-layout {
+    background:
+        linear-gradient(135deg, rgba(15, 28, 21, 0.95) 0%, rgba(26, 60, 40, 0.9) 100%),
+        url('/images/hero/index-hero.jpg') center / cover no-repeat;
+}

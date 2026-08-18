@@ -1,0 +1,1 @@
+<a href="https://wa.me/27683282839?text=Hi%20SIXTY04!%20I'd%20like%20to%20enquire%20about%20your%20services." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
